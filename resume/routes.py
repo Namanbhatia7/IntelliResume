@@ -5,6 +5,12 @@ from resume import app,db, bcrypt , mail
 from flask_login import login_user,current_user,logout_user,login_required
 from flask_mail import Message
 import secrets,os
+import pandas as pd
+from sklearn.metrics.pairwise import cosine_similarity
+from sklearn.feature_extraction.text import CountVectorizer
+import PyPDF2
+import re
+import string
 from PIL import Image
 import pdfkit
 from dotenv import load_dotenv
@@ -402,6 +408,54 @@ def token_reset(token):
     return render_template("reset_password.html",title="Reset Password",form=form)
 
 
+# JOB SEARCH
+
+@app.route('/jobs', methods=['POST', 'GET'])
+def index():
+    print ("ggg")
+    if request.method == 'POST':
+        try:
+
+            textjd = request.form['jdtxt']
+            # Open pdf file
+            pdfFileObj = open('sam1.pdf','rb')
+
+            # Read file
+            pdfReader = PyPDF2.PdfFileReader(pdfFileObj)
+
+            # Get total number of pages
+            num_pages = pdfReader.numPages
+
+            # Initialize a count for the number of pages
+            count = 0
+
+            # Initialize a text empty etring variable
+            textcv = ""
+
+            # Extract text from every page on the file
+            while count < num_pages:
+                pageObj = pdfReader.getPage(count)
+                count +=1
+                textcv += pageObj.extractText()
+            #print (textjd)
+            #print (textcv)
+            documents = [textjd, textcv]
+            count_vectorizer = CountVectorizer()
+            sparse_matrix = count_vectorizer.fit_transform(documents)
+            doc_term_matrix = sparse_matrix.todense()
+            df = pd.DataFrame(doc_term_matrix, 
+                        columns=count_vectorizer.get_feature_names(), 
+                        index=['textjd', 'textcv'])
+            answer = cosine_similarity(df, df)
+            answer = pd.DataFrame(answer)
+            answer = answer.iloc[[1],[0]].values[0]
+            answer = round(float(answer),4)*100
+            return ("Your resume matched " + str(answer) + " %" + " of the job-description!")
+        except:
+            return render_template('index.html')
+    else:
+            return render_template('index.html')
+        
 
 
 
