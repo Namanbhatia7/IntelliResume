@@ -30,11 +30,11 @@ This section should list any major frameworks that you built your project using.
 
 1. Clone the repo
 ```sh
-git clone https://github.com/DiptoChakrabarty/Resume-Generator
+git clone https://github.com/namishagg2602/IntelliResume
 ```
 2. Enter Directory
 ```sh
-cd Resume-Generator
+cd IntelliResume
 ```
 3. Install all packages
 ```sh
