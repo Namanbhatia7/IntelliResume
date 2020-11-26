@@ -30,7 +30,7 @@ This section should list any major frameworks that you built your project using.
 
 1. Clone the repo
 ```sh
-git clone https://github.com/namishagg2602/IntelliResume
+git clone https://github.com/namanbhatia7/IntelliResume
 ```
 2. Enter Directory
 ```sh
