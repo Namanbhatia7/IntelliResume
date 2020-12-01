@@ -13,12 +13,16 @@ h6 {
     color: black;
 }
 
+.fr {
+    float: right;
+}
+
 .bg-steel {
-    background-color: #dbe2ef;
+    background-color: #2b2e4a;
 }
 
 .site-header .navbar-nav .nav-link {
-    color: #3f72af;
+    color: #e3fdfd;
 }
 
 .site-header .navbar-nav .nav-link:hover {
@@ -48,7 +52,7 @@ a.article-title:hover {
 }
 
 .article-content {
-    white-space: pre-line;
+    color: #112d4e;
 }
 
 .article-img {

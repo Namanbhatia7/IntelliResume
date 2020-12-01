@@ -57,9 +57,9 @@
             </div>
 
         </fieldset>
-        <a href="/resume/new/skills" class="btn btn-outline-primary" style="float: right;">Go to Skills</a>
+        <a href="/resume/new/skills" class="btn btn-primary" style="float: right;">Go to Skills</a>
         <div class="form-group">
-            {{ form.submit(class="btn btn-outline-info") }}
+            {{ form.submit(class="btn btn-primary" ) }}
         </div>
     </form>
 
@@ -79,7 +79,7 @@
     </article>
     <div>
         <a class="btn btn-primary btn-sm mt-1 mb-1" href="{{ url_for('update_pro', project_id=project.id) }}">Update</a>
-        <button type="button" class="btn btn-primary btn-sm m-1" data-toggle="modal" data-target="#deleteModal">Delete</button>
+        <button type="button" class="button4 btn-sm m-1 bouncy" data-toggle="modal" data-target="#deleteModal">Delete</button>
     </div>
     <!-- Modal -->
     <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">

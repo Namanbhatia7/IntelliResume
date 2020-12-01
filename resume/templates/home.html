@@ -4,31 +4,31 @@
 <p></p>
 
 <div>
-    <article class="container">
-        <p class="article-content">Welcome to Resume Generator , create stunning resume </p>
-        <p class="article-content"> easily and fast , login and create your resume now </p>
-    </article>
-
-    {% if current_user.is_authenticated %}
-    <a href="/accounts" class="btn btn-outline-primary" style="margin-left: auto; margin-right: auto;">Update Account details Here</a>
+    <div class="container">
+        <p class="article-content">Welcome to Resume Generator</p>
+        <p class="article-content"> Create stunning resume easily and fast </p>
+        <p class="article-content"> Login and create your resume now. </p>
+    </div>
+    <hr> {% if current_user.is_authenticated %}
+    <a href="/accounts" class="btn btn-primary">Update Account details Here</a>
     <br>
     <br>
     <br>
-    <a href="/resume/new" class="btn btn-outline-primary" style="margin-left: auto; margin-right: auto;">Create Resume</a>
+    <a href=" /resume/new " class="btn btn-primary ">Create Resume</a>
     <br>
     <br>
     <br>
-    <a href="/download" class="btn btn-outline-primary" style="margin-left: auto; margin-right: auto;">Generate PDF of Resume</a>
+    <a href="/download" class="btn btn-primary">Generate PDF of Resume</a>
     <br>
     <br>
     <br>
-    <a href="/share" class="btn btn-outline-primary" style="margin-left: auto; margin-right: auto;">Share  Resume</a> {% else %}
+    <a href=" /share " class="btn btn-primary ">Share Resume</a> {% else %}
     <br>
     <br>
-    <a href="/login" class="btn btn-outline-primary" style="margin-left: auto; margin-right: auto;">Login to Continue</a>
+    <a href="/login" class="btn btn-primary">Login to Continue</a>
     <br>
     <br>
-    <a href="/register" class="btn btn-outline-primary" style="float: right;">Register Here </a> {% endif %}
+    <a href=" /register " class="btn btn-primary ">Register Here </a> {% endif %}
 
 </div>
 

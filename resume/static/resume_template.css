@@ -32,6 +32,10 @@ a {
     text-decoration: none;
 }
 
+.fr {
+    float: right;
+}
+
 a:hover {
     text-decoration: underline;
 }
