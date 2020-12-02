@@ -56,7 +56,7 @@ PASSWORD="{{ your password }}"
 
 6. Run webserver
 ```sh
-python3 app.py
+python app.py
 ```
 
 # Contributing
